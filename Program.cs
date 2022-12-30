@@ -1,34 +1,31 @@
-﻿namespace project_1
+﻿namespace Project_2
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int num, i, z, n1, n2;
+            int n, i, sum;
+            int n1, n2;
 
-            Console.Write("Input starting number of range: ");
+            Console.Write("Input the starting range or number : ");
             n1 = int.Parse(Console.ReadLine());
-            Console.Write("Input ending number of range : ");
+            Console.Write("Input the ending range of number : ");
             n2 = int.Parse(Console.ReadLine());
-            Console.Write("The prime numbers between {0} and {1} are : \n", n1, n2);
-
-            for (num = n1; num <= n2; num++)
+            Console.Write("The Perfect numbers within the given range : ");
+            for (n = n1; n <= n2; n++)
             {
-                z = 0;
-
-                for (i = 2; i <= num / 2; i++)
+                i = 1;
+                sum = 0;
+                while (i < n)
                 {
-                    if (num % i == 0)
-                    {
-                        z++;
-                        break;
-                    }
+                    if (n % i == 0)
+                        sum = sum + i;
+                    i++;
                 }
-
-                if (z == 0 && num != 1)
-                    Console.Write("{0} ", num);
+                if (sum == n)
+                    Console.Write("{0} ", n);
             }
             Console.Write("\n");
         }
     }
-}
+  }
